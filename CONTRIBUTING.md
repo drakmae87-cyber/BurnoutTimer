@@ -5,7 +5,7 @@ Contributions are welcome. Please open an issue before substantial changes so th
 ## Development
 
 1. Install Android Studio, JDK 17+, Android SDK 36, and Build Tools 36.0.0.
-2. Build and run the existing unit tests with `.\gradlew.bat :domain:test :app:assembleDebug`.
+2. Build and run the existing tests with `.\gradlew.bat :domain:test :policy:testDebugUnitTest :client-app:assembleDebug :admin-app:assembleDebug`.
 3. Keep platform-independent rules in `domain`; Android APIs belong in `data`, `services`, or `app`.
 4. Add tests for domain behavior and document permission, storage, and privacy changes.
 

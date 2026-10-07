@@ -23,3 +23,12 @@ data class SessionLogEntity(
     val event: String,
     val occurredAtEpochMillis: Long
 )
+
+@Entity(tableName = "scheduled_sessions")
+data class ScheduledSessionEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0L,
+    val title: String,
+    val startsAtEpochMillis: Long,
+    val durationMinutes: Int,
+    val isEnabled: Boolean = true
+)

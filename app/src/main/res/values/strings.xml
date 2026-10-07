@@ -1,0 +1,3 @@
+<resources>
+    <string name="client_admin_description">Permite aplicar políticas locales limitadas y temporales en un dispositivo aprovisionado por su propietario.</string>
+</resources>

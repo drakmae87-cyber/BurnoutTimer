@@ -38,15 +38,16 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Run tests and build APK
-        run: ./gradlew --no-daemon :domain:test :app:assembleDebug
+      - name: Run tests and build Admin and Client APKs
+        run: ./gradlew --no-daemon :domain:test :policy:testDebugUnitTest :client-app:assembleDebug :admin-app:assembleDebug
 
       - name: Prepare Pages site and APK checksum
         run: |
           mkdir -p site
-          cp app/build/outputs/apk/debug/app-debug.apk site/BurnoutTimer-debug.apk
+          cp app/build/outputs/apk/debug/client-app-debug.apk site/BurnoutTimer-debug.apk
+          cp admin-app/build/outputs/apk/debug/admin-app-debug.apk site/BurnoutTimer-Admin-debug.apk
           cd site
-          sha256sum BurnoutTimer-debug.apk > SHA256SUMS.txt
+          sha256sum BurnoutTimer-debug.apk BurnoutTimer-Admin-debug.apk > SHA256SUMS.txt
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

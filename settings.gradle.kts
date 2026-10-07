@@ -15,4 +15,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "BurnoutTimer"
-include(":app", ":data", ":domain", ":services")
+include(":client-app", ":admin-app", ":data", ":domain", ":policy", ":services")
+
+project(":client-app").projectDir = file("app")

@@ -2,21 +2,18 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
-    alias(libs.plugins.hilt)
 }
 
 android {
-    namespace = "com.burnouttimer.client"
+    namespace = "com.burnouttimer.admin"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.burnouttimer.client"
+        applicationId = "com.burnouttimer.admin"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "0.2.0"
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     val releaseStoreFile = System.getenv("ANDROID_KEYSTORE_FILE")
@@ -38,21 +35,17 @@ android {
             if (releaseStoreFile != null) {
                 signingConfig = signingConfigs.getByName("release")
             }
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
         }
-    }
-
-    buildFeatures {
-        compose = true
-        buildConfig = true
     }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        compose = true
     }
 }
 
@@ -63,22 +56,12 @@ kotlin {
 }
 
 dependencies {
-    implementation(project(":data"))
-    implementation(project(":domain"))
     implementation(project(":policy"))
-    implementation(project(":services"))
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core)
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.lifecycle.runtime)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.hilt.navigation.compose)
-    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.hilt.android)
-    implementation(libs.coroutines.android)
     implementation(libs.zxing.embedded)
-    ksp(libs.hilt.compiler)
     debugImplementation(libs.androidx.compose.ui.tooling)
 }

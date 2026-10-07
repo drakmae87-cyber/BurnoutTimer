@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.longPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import com.burnouttimer.domain.model.SessionState
+import com.burnouttimer.domain.model.AppLanguage
 import com.burnouttimer.domain.repository.SessionPreferences
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -24,6 +25,13 @@ class DataStoreSessionPreferences @Inject constructor(
         )
     }
 
+    override val appLanguage: Flow<AppLanguage> = context.sessionDataStore.data.map { preferences ->
+        when (preferences[APP_LANGUAGE]) {
+            LANGUAGE_ENGLISH -> AppLanguage.ENGLISH
+            else -> AppLanguage.SPANISH
+        }
+    }
+
     override suspend fun setSessionState(state: SessionState) {
         context.sessionDataStore.edit { preferences ->
             preferences[IS_SESSION_ACTIVE] = state.isActive
@@ -31,8 +39,17 @@ class DataStoreSessionPreferences @Inject constructor(
         }
     }
 
+    override suspend fun setAppLanguage(language: AppLanguage) {
+        context.sessionDataStore.edit { preferences ->
+            preferences[APP_LANGUAGE] = if (language == AppLanguage.ENGLISH) LANGUAGE_ENGLISH else LANGUAGE_SPANISH
+        }
+    }
+
     private companion object {
         val IS_SESSION_ACTIVE = booleanPreferencesKey("is_session_active")
         val SESSION_END_TIME = longPreferencesKey("session_end_time")
+        val APP_LANGUAGE = androidx.datastore.preferences.core.stringPreferencesKey("app_language")
+        const val LANGUAGE_ENGLISH = "en"
+        const val LANGUAGE_SPANISH = "es"
     }
 }
