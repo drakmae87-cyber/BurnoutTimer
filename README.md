@@ -25,6 +25,8 @@ Requirements: Android Studio with JDK 17 or newer, Android SDK Platform 36, and 
 
 Open the project root in Android Studio or install the debug APK from `app\build\outputs\apk\debug\app-debug.apk`.
 
+GitHub Actions uses Node.js 24 via `actions/setup-node@v5` and Java 17 via `actions/setup-java@v5`.
+
 The app targets Android 15 (API 35) and compiles against API 36. The user starts the 25-minute foreground timer from the app. Granting notification permission makes its persistent notification visible. Granting “Display over other apps” is optional and only permits a dismissible completion overlay.
 
 ## Security and privacy choices
