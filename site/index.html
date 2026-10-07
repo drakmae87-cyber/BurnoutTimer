@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101827">
+    <title>Burnout Timer — APK de desarrollo</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: system-ui, sans-serif;
+        background: #101827;
+        color: #e5e7eb;
+      }
+
+      body {
+        box-sizing: border-box;
+        display: grid;
+        min-height: 100vh;
+        margin: 0;
+        padding: 2rem;
+        place-items: center;
+      }
+
+      main {
+        width: min(100%, 42rem);
+        padding: 2rem;
+        border: 1px solid #334155;
+        border-radius: 1rem;
+        background: #182235;
+      }
+
+      h1 { margin-top: 0; }
+      a { color: #93c5fd; }
+      .download {
+        display: inline-block;
+        margin: 1rem 0;
+        padding: 0.8rem 1.1rem;
+        border-radius: 0.6rem;
+        background: #2563eb;
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .notice {
+        padding: 1rem;
+        border-left: 4px solid #fbbf24;
+        background: #292619;
+      }
+
+      code { overflow-wrap: anywhere; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Burnout Timer</h1>
+      <p>Temporizador voluntario de enfoque para Android, desarrollado con Kotlin y Jetpack Compose.</p>
+      <p><a class="download" href="./BurnoutTimer-debug.apk" download>Descargar APK de desarrollo</a></p>
+      <p><a href="./SHA256SUMS.txt">Ver suma SHA-256 del APK</a></p>
+      <div class="notice">
+        <strong>Versión de desarrollo:</strong> este APK está firmado con una clave de depuración,
+        no es una versión de producción ni una publicación de F-Droid. Android puede advertir
+        sobre la instalación de aplicaciones externas. Instálalo solo si confías en el origen.
+      </div>
+      <p>El overlay es opcional y descartable. Esta app no captura imágenes ni bloquea los controles del sistema.</p>
+      <p><a href="https://github.com/REPLACE_WITH_OWNER/BurnoutTimer">Código fuente en GitHub</a></p>
+      <p>Licencia <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU AGPLv3</a>.</p>
+    </main>
+  </body>
+</html>

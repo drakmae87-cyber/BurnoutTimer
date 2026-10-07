@@ -1,0 +1,17 @@
+Categories:
+  - Time
+License: AGPL-3.0-or-later
+AuthorName: Replace with maintainer
+SourceCode: https://github.com/REPLACE_WITH_OWNER/BurnoutTimer
+IssueTracker: https://github.com/REPLACE_WITH_OWNER/BurnoutTimer/issues
+
+RepoType: git
+Repo: https://github.com/REPLACE_WITH_OWNER/BurnoutTimer.git
+
+Builds:
+  - versionName: 0.1.0
+    versionCode: 1
+    commit: v0.1.0
+    subdir: .
+    gradle:
+      - yes
