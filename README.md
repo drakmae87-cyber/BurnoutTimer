@@ -76,6 +76,8 @@ Pushing a `v*` tag builds and attaches the signed APK. Never commit keystores or
 
 `.github/workflows/pages.yml` runs the domain tests, builds a debug APK, calculates its SHA-256 checksum, and publishes both with the static page in `site/` to GitHub Pages on pushes to `main`/`master` or via manual dispatch. GitHub Pages must be enabled for the repository and configured to deploy with GitHub Actions. This is a development APK signed with the debug key, not a production release.
 
+Current download page: https://drakmae87-cyber.github.io/BurnoutTimer/
+
 ## Funding
 
 - [GitHub Sponsors](https://github.com/sponsors/REPLACE_WITH_GITHUB_USERNAME)

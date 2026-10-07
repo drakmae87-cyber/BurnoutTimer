@@ -1,12 +1,12 @@
 Categories:
   - Time
 License: AGPL-3.0-or-later
-AuthorName: Replace with maintainer
-SourceCode: https://github.com/REPLACE_WITH_OWNER/BurnoutTimer
-IssueTracker: https://github.com/REPLACE_WITH_OWNER/BurnoutTimer/issues
+AuthorName: drakmae87-cyber
+SourceCode: https://github.com/drakmae87-cyber/BurnoutTimer
+IssueTracker: https://github.com/drakmae87-cyber/BurnoutTimer/issues
 
 RepoType: git
-Repo: https://github.com/REPLACE_WITH_OWNER/BurnoutTimer.git
+Repo: https://github.com/drakmae87-cyber/BurnoutTimer.git
 
 Builds:
   - versionName: 0.1.0
